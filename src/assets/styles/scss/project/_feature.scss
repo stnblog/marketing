@@ -1,0 +1,193 @@
+.p-feature {
+  &::before {
+    right: 0;
+  }
+
+  &__inner {
+    padding: 0 15px;
+    @include maxWidth($width);
+  }
+
+  &__wrap {
+    margin: 30px 0 0;
+
+    @include mq-target(sm) {
+      margin: 60px 0 0;
+    }
+  }
+
+  &__column {
+    grid-template-columns: 1fr 40%;
+    grid-template-rows: auto 1fr;
+    column-gap: 40px;
+    grid-template-areas:
+      "head body"
+      "other body";
+
+    @include mq-target(md) {
+      display: grid;
+      column-gap: 30px;
+      grid-column-gap: 30px;
+      grid-template-columns: 30% 1fr;
+    }
+
+    @include mq-target(lg) {
+      grid-column-gap: 60px;
+      column-gap: 60px;
+    }
+
+    &--second {
+      grid-template-columns: 1fr 30%;
+      grid-template-areas:
+        "body head"
+        "body other";
+    }
+  }
+
+  &__head {
+    text-align: left;
+    grid-area: head;
+
+    @include mq-target(md) {
+      max-width: 360px;
+    }
+  }
+
+  &__body {
+    // background: rgba($color: $color-key, $alpha: 0.5);
+    grid-area: body;
+    margin: 40px 0 0;
+
+    @include mq-target(md) {
+      margin: 0%;
+    }
+
+    &--second {
+      background: $color-bg;
+    }
+  }
+
+  &__other {
+    margin-top: 40px;
+    grid-area: other;
+  }
+
+  &__btn {
+    text-align: left;
+
+    a {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__list {
+    counter-reset: number 0;
+    @include flex($wrap:wrap, $align:stretch);
+    border: 2px solid $color-key;
+  }
+
+  &__item {
+    counter-increment: number 1;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+
+    @include mq-target(sm) {
+      width: 33.3333%;
+    }
+
+
+    div {
+      display: block;
+      padding: 32px 12px 20px;
+
+      &::before {
+        font-size: 1.3rem;
+        font-weight: 500;
+        content: 'points 0'counter(number) '.';
+        top: 10px;
+        left: 15px;
+        text-transform: uppercase;
+        position: absolute;
+        display: block;
+        color: $color-bg;
+        z-index: 10;
+        // transform: rotate(90deg);
+        transform-origin: center;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      // background: $color-bg;
+      background: $color-key;
+    }
+
+    @include mq-target(sm) {
+      &:not(:nth-child(3n)) {
+        &::before {
+          top: 0;
+          right: 0;
+          width: 2px;
+          height: 100%;
+        }
+      }
+
+      &:not(:nth-child(n+7)) {
+        &::after {
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+        }
+      }
+    }
+
+  }
+
+  &__img {
+    border-radius: 50%;
+    width: 100px;
+    margin: auto;
+
+    &::before {
+      padding-top: 100%;
+    }
+  }
+
+  &__heading {
+    font-weight: 900;
+    font-size: 4rem;
+
+    &--points {
+      // color: $color-bg;
+      color: $color-key;
+      font-weight: 500;
+      font-size: 1.6rem;
+      margin: 14px 0 4px;
+    }
+  }
+
+  &__txt {
+    margin-top: 32px;
+    text-align: left;
+    line-height: 2;
+    font-size: 1.6rem;
+    font-feature-settings: "palt";
+
+    &--points {
+      color: $color-sub;
+      font-feature-settings: "palt";
+      // font-size: 1.2rem;
+    }
+  }
+}
+
+
+@include mq-target {
+  .p-feature {
+
+  }
+}

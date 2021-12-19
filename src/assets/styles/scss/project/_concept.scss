@@ -1,0 +1,169 @@
+.p-concept {
+  &::before {
+    left: 0;
+  }
+
+  &__inner {
+    position: relative;
+    padding: 0 15px;
+    @include maxWidth(1030px);
+  }
+
+  &__column {
+    @include flex($wrap:wrap, $justify:space-between, $align:center);
+  }
+
+  &__rellax {
+    position: absolute;
+    z-index: -1;
+
+    svg {
+      fill: $color-key;
+      height: 90px;
+      opacity: 0.2;
+      width: 90px;
+    }
+
+    &:nth-of-type(1) {
+      top: 0px;
+      left: -150px;
+    }
+
+    &:nth-of-type(2) {
+      top: 200px;
+      left: -200px;
+    }
+
+    &:nth-of-type(3) {
+      top: 0px;
+      right: -150px;
+    }
+
+    &:nth-of-type(4) {
+      right: -200px;
+      top: 200px;
+    }
+  }
+
+  &__body {
+    margin: 20px 0 0;
+  }
+
+  &__list {
+    @include flex($justify:space-between, $wrap:wrap);
+  }
+
+  &__item {
+    position: relative;
+    padding: 2%;
+    background: $color-bg;
+    box-shadow: 0 2.5rem 4rem rgb(0 0 0 / 50%);
+    outline: 2px solid $color-key;
+    outline-offset: 10px;
+    transition: outline-offset .4s ease;
+    z-index: 20;
+    width: 100%;
+
+    &:nth-of-type(2) {
+      margin: 30px 0;
+    }
+
+    @include mq-target(sm) {
+      outline: 4px solid $color-key;
+
+      &:nth-of-type(2) {
+        margin: 0;
+      }
+
+      width: 31%;
+    }
+
+    @include mq-target(lg) {
+      outline-offset: 50px;
+    }
+
+    &.is-anim {
+      outline-offset: 0;
+    }
+  }
+
+  &__img {
+    &--points {
+      width: 130px;
+      margin: auto;
+      border-radius: 50%;
+      overflow: hidden;
+
+      &::before {
+        padding-top: 100%;
+      }
+    }
+  }
+
+  &__bg {
+    position: relative;
+
+    padding-top: 50px;
+    background-image: url(../../assets/images/sec/about/about_01.png);
+    @include bgCover;
+    background-size: contain;
+    background-position: right;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: auto;
+      padding-top: 40%;
+    }
+  }
+
+  &__heading {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    font-weight: 500;
+  }
+
+  &__txt {
+    font-size: 1.4rem;
+  }
+}
+
+
+@include mq-target(md) {
+  .p-concept {
+    &__intro {
+      width: 460px;
+      position: absolute;
+      z-index: 19;
+
+      p {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__body {
+      margin: 60px 0 0;
+    }
+
+    &__item {
+      outline-offset: 20px;
+      width: 100%;
+      max-width: 280px;
+
+      &:nth-child(1) {
+        transform: translate(0, -60px);
+      }
+
+      &:nth-child(2),
+      &:nth-child(5) {
+        transform: translate(0, -30px);
+      }
+    }
+
+    &__bg {
+      width: 80%;
+      margin: 0 0 0 22%;
+    }
+  }
+}

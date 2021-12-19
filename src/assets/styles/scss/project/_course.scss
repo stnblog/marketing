@@ -1,0 +1,187 @@
+.p-course {
+  &::before {
+    left: initial;
+    right: 0;
+  }
+
+  &__wrap {
+    @include maxWidth($width);
+    padding: 0 15px;
+    border-radius: 12px;
+  }
+
+
+  &__list {
+    margin: 20px 0 0;
+    counter-reset: number 0;
+    @include column4(31.6%);
+    @include flex($justify:space-between, $wrap:wrap);
+
+    &--detail {
+      dt {
+        font-weight: 400;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0 0;
+      }
+
+      dd {
+        position: relative;
+        font-size: 3rem;
+        font-weight: 500;
+
+        & .-price {
+          padding-left: 6px;
+          font-size: 1.2rem;
+        }
+
+        &:first-of-type {
+          font-weight: 900;
+          font-family: "Poppins";
+        }
+
+        &:nth-of-type(1) {
+          margin: 10px 0;
+        }
+
+
+        &:not(:first-of-type) {
+          color: $color-sub;
+          text-align: left;
+          font-size: 1.4rem;
+          line-height: 1.5;
+          height: 56px;
+          @include flex($align:center);
+          padding-left: 30px;
+          border-bottom: 1px solid $color-grey-light-3;
+
+          &::before {
+            content: "";
+            display: block;
+            background: $color-green-light-2;
+            @include absolute($top:30%, $left:0);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            @include absolute($top:40%, $left:5px);
+            width: 10px;
+            height: 5px;
+            border-left: 2px solid $color-bg;
+            border-bottom: 2px solid $color-bg;
+            transform: rotate(-45deg);
+          }
+        }
+
+        &:last-of-type {
+          border: none;
+        }
+      }
+    }
+  }
+
+  &__item {
+    margin: 40px 0 0;
+    counter-increment: number 1;
+    background: $color-bg;
+    box-shadow: rgb(0 0 0 / 15%) 0px 4px 40px;
+    font-size: 1.2rem;
+    padding: 30px 20px;
+    opacity: 0;
+    border-radius: 12px;
+    width: 100%;
+
+    @include mq-target(sm) {
+      width: 48.6%;
+    }
+
+    @include mq-target(md) {
+      font-size: 1.4rem;
+      padding: 40px 24px 30px;
+      // margin: 40px 0 0;
+      width: 31.6%;
+      // min-width: 300px;
+    }
+    &::before {
+      color: $color-key;
+      font-size: 1.3rem;
+      font-weight: 500;
+      content: 'course 0'counter(number) '.';
+      top: 46px;
+      left: -20px;
+      text-transform: uppercase;
+      position: absolute;
+      display: block;
+      // color: $color-bg;
+      z-index: 10;
+      transform: rotate(90deg);
+      transform-origin: center;
+    }
+
+    &:nth-of-type(1) {
+      & .p-course__icon {
+        svg {
+          fill:#e44d26;
+        }
+      }
+    }
+    &:nth-of-type(4) {
+      & .p-course__icon {
+        svg {
+          fill: $color-main;
+        }
+      }
+    }
+    &:nth-of-type(5) {
+      & .p-course__icon {
+        svg {
+          fill: $color-blue-light-1;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    margin: 30px 0 0;
+  }
+
+  &__icon {
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: $color-grey-light-3;
+    border-radius: 50%;
+    @include flex($align:center, $justify:center);
+
+    & svg {
+      margin: auto;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+
+  &__img {
+    img {
+      width: 110px;
+      margin: auto;
+    }
+  }
+
+  &__txt {
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1.3rem;
+    letter-spacing: 0.2em;
+  }
+}

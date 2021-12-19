@@ -1,0 +1,136 @@
+.p-mentor {
+  &::before {
+    left: 0;
+  }
+
+  &__inner {
+    position: relative;
+    padding: 0 15px;
+
+    &--slide {
+      position: relative;
+    }
+  }
+
+  &__box {
+    &--detail {
+      text-align: left;
+      margin: 40px 0 0;
+      @include mq-target(sm) {
+        margin: 0 3.4% 0 0;
+        width: 40%;
+      }
+    }
+
+    &--img {
+      align-self: center;
+
+      height: 100%;
+
+      @include mq-target(sm) {
+        border-left: solid 1px #ebebeb;
+        padding-left: 5%;
+        width: 60%;
+      }
+    }
+  }
+
+  &__list {
+    list-style-type: disc;
+    padding: 10px 0 0 20px;
+    margin: 15px 0 0;
+    border-top: 2px solid $color-grey-light-3;
+  }
+
+  &__item {
+    margin: 10px 0 0;
+    font-size: 1.4rem;
+  }
+
+  &__img {
+    cursor: pointer;
+    border-radius: 4px;
+    overflow: hidden;
+
+    &::before {
+      padding-top: 80%;
+    }
+
+    @include mq-target(sm) {
+      &::before {
+        padding-top: 90%;
+      }
+    }
+
+    &--modal {
+      max-width: 300px;
+      width: 100%;
+      margin: auto;
+      &::before {
+        padding-top: 80%;
+      }
+    }
+  }
+
+
+  &__slider {
+    margin-top: 60px;
+  }
+
+  &__btn {
+    &--modal {
+      cursor: pointer;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+
+      & svg {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        fill: $color-bg;
+        z-index: 11;
+      }
+
+      &::before {
+        content: '■';
+        position: absolute;
+        font-size: 108px;
+        background: $color-key;
+        color: $color-key;
+        bottom: -110px;
+        right: -65px;
+        transform: rotate(45deg);
+        z-index: 10;
+      }
+    }
+  }
+
+  &__skill {
+    margin: 30px 0 0;
+    @include mq-target(sm) {
+      margin: 100px 0 0;
+    }
+  }
+
+
+  &__heading {
+    color: $color-main;
+    font-size: 2.6rem;
+
+    &--skillset {
+      color: $color-main;
+      font-size: 1.8rem;
+    }
+  }
+
+  &__txt {
+    margin: 25px 0 0;
+    font-size: 1.5rem;
+
+    &--message {
+      margin: 20px 0 0;
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+<% let filePath = jsonData.pages[pageId].filePath %>
+
+<footer class="l-footer" id="footer">
+  <div class="container">
+    <a href="#" class="l-footer__logo">
+      tnblog
+    </a>
+    <div class="l-footer__sns">
+      <a href="#" class="l-footer__sns--icon -fb">
+        <img src="<%= filePath %>assets/images/SVG/social/facebook.svg" alt="facebook">
+      </a>
+      <a href="#" class="l-footer__sns--icon -tw">
+        <img src="<%= filePath %>assets/images/SVG/social/twitter.svg" alt="twitter">
+      </a>
+      <a href="mailto:user@dammy.com?body=お問い合わせ内容" class="l-footer__sns--icon -mail">
+        <img src="<%= filePath %>assets/images/SVG/social/mail.svg" alt="mail">
+      </a>
+    </div>
+    <p class="l-footer__copyright">
+      Copyright © tnblog, All rights reserved.
+    </p>
+  </div>
+
+</footer>
+</div>
+
+<!-- vendors -->
+<script src="<%= filePath %>assets/scripts/vendors/jquery.min.js"></script>
+<script src="<%= filePath %>assets/scripts/vendors/rellax.min.js"></script>
+<script src="<%= filePath %>assets/scripts/vendors/jquery.matchHeight-min.js"></script>
+<script src="<%= filePath %>assets/scripts/vendors/swiper-bundle.min.js"></script>
+
+<script>
+  var rellax = new Rellax('.js-rellax', {
+    vertical: true,
+    horizontal: false
+  });
+</script>
+
+<% if (pageId === 'home'){ %>
+<% } else if (pageId === 'home') { %>
+<% } else if (pageId === '') { %>
+<% } else { %>
+<% } %>
+
+<script src="<%= filePath %>assets/scripts/swiper.js"></script>
+<script src="<%= filePath %>assets/scripts/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<% let title = (pageId === 'home') ? jsonData.siteInfo.name : jsonData.pages[pageId].name + jsonData.siteInfo.name%>
+<% let description = jsonData.pages[pageId].description %>
+<% let filePath = jsonData.pages[pageId].filePath %>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>">
+
+  <link rel="icon" href="<%= filePath %>assets/images/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link href="//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="//fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
+  <link href="//unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="<%= filePath %>assets/styles/vendors/swiper-bundle.min.css" rel="stylesheet">
+  <link href="<%= filePath %>assets/styles/main.min.css" rel="stylesheet">
+
+</head>
+
+
+
+<body data-student="1" class="">
+  <!-- <body data-student="1"> -->
+
+
+  <header id="js-header" class="l-header">
+    <div class="l-header__wrap">
+      <div class="l-header__row">
+        <p class="l-header__logo">
+          <a href="/">tnblog</a>
+        </p>
+        <nav class="l-header__nav u-dp-pc">
+          <ul class="l-header__list l-header__list--nav">
+            <li class="l-header__item--nav">
+              <a href="/marketing">
+                <span class="-en">HOME</span>
+                <span class="-ja">ホーム</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="#concept">
+                <span class="-en">CONCEPT</span>
+                <span class="-ja">コンセプト</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="#feature">
+                <span class="-en">FEATURE</span>
+                <span class="-ja">特徴</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="#mentor">
+                <span class="-en">MENTOR</span>
+                <span class="-ja">メンター</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="#course">
+                <span class="-en">COURSE</span>
+                <span class="-ja">コース料金</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="#flow">
+                <span class="-en">FLOW</span>
+                <span class="-ja">コースの流れ</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <button class="l-drawer__trigger js-draw__trigger">
+    <span class="-line"></span>
+  </button>
+
+  <nav class="l-drawer__content js-draw__content">
+    <div class="l-drawer__wrap">
+      <ul class="l-drawer__list l-drawer__list--menu">
+        <li class="l-drawer__item">
+          <a href="/">
+            <span class="-en">HOME</span>
+            <span class="-ja">ホーム</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="#concept">
+            <span class="-en">CONCEPT</span>
+            <span class="-ja">コンセプト</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="#feature">
+            <span class="-en">FEATURE</span>
+            <span class="-ja">特徴</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="#mentor">
+            <span class="-en">MENTOR</span>
+            <span class="-ja">メンター</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="#course">
+            <span class="-en">COURSE</span>
+            <span class="-ja">コース料金</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="#flow">
+            <span class="-en">FLOW</span>
+            <span class="-ja">コースの流れ</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>

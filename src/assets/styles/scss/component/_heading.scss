@@ -1,0 +1,52 @@
+.c-intro {
+  text-align: left;
+  @include maxWidth($width);
+  position: relative;
+
+  &__heading {
+    color: $color-key;
+    font-family: $font-sub;
+    font-weight: 900;
+    font-size: 2.4rem;
+    font-feature-settings: "palt";
+    position: relative;
+    z-index: 2;
+
+    @include mq-target(sm) {
+      font-size: 4rem;
+    }
+
+  }
+
+  &__txt {
+
+    color: $color-main;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    font-feature-settings: "palt";
+    margin: 10px 0 0;
+
+    @include mq-target(sm) {
+      font-size: 1.8rem;
+      line-height: 2;
+    }
+
+    &--back {
+      color: $color-key;
+      font-size: 10rem;
+      line-height: .8;
+      opacity: 0.2;
+      bottom: 100%;
+      right: 0;
+      z-index: 2;
+      text-align: right;
+      white-space: nowrap;
+      position: absolute;
+
+      &.-left {
+        right: initial;
+        left: 0;
+      }
+    }
+  }
+}

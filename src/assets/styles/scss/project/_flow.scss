@@ -1,0 +1,112 @@
+.p-flow {
+  &::before {
+    display: none;
+  }
+
+  &__head {
+    position: relative;
+    @include flex($align:center);
+  }
+
+  &__list {
+    counter-reset: number 0;
+    position: relative;
+
+    @include mq(sm) {
+      margin: 40px 0 0;
+    }
+
+    &::before {
+      content: "";
+      @include absolute($top:0, $left: 27px);
+      width: 2px;
+      height: 92%;
+      display: block;
+      background: $color-key;
+    }
+  }
+
+  &__item {
+    counter-increment: number 1;
+    position: relative;
+    text-align: left;
+    min-height: 100px;
+
+    &:not(:first-of-type) {
+      margin: 40px 0 0;
+    }
+
+    &:last-child {
+      &::before {
+        content: "";
+        @include absolute($bottom:0, $left:0);
+        width: 54px;
+        height: 98%;
+        background: $color-bg;
+      }
+    }
+
+    &::after {
+      font-family: $font-sub;
+      font-size: 2rem;
+      font-weight: 500;
+      content: 'STEP 0'counter(number) '.';
+      @include absolute($top:-10px,$right:15px);
+      text-transform: uppercase;
+      display: block;
+      color: $color-key;
+      z-index: 10;
+      // transform: rotate(90deg);
+      transform-origin: center;
+    }
+  }
+
+  &__slider {
+    // overflow: hidden;
+  }
+
+  &__slidewrap {
+    display: flex;
+  }
+
+  &__slide {
+    // background: $color-white;
+  }
+
+  &__img {
+    &--slider {
+
+      &::before {
+        padding-top: 70%;
+      }
+    }
+  }
+
+  &__heading {
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-left: 16px;
+  }
+
+  &__txt {
+    margin: 0 0 0 80px;
+    font-size: 1.4rem;
+
+    @include mq(sm) {
+      margin: 0 0 0 80px;
+    }
+  }
+
+  &__number {
+    background: $color-bg;
+    color: $color-key;
+    width: 54px;
+    height: 54px;
+    font-size: 2rem;
+    border: 2px solid $color-key;
+    @include flex($align:center, $justify:center);
+    flex: 0 0 auto;
+    font-weight: 500;
+    border-radius: 50%;
+  }
+}
