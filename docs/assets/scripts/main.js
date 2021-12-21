@@ -7,6 +7,15 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 var $body = $("body");
+$(window).on('load', function () {
+  // $("#js-loader").fadeOut(); これだけでOK
+  // codepen用
+  function loaderClose() {
+    $("#js-loader").fadeOut();
+  }
+
+  setTimeout(loaderClose, 1000);
+});
 $(document).ready(function () {
   $("a[href*='http://']:not([href*='" + location.hostname + "']),[href*='https://']:not([href*='" + location.hostname + "'])").attr('target', '_blank').addClass('blank');
   $('a[href^="#"]').on('click', function () {
@@ -22,46 +31,33 @@ $(document).ready(function () {
     $('.js-draw__content').toggleClass('is-active');
     $('body').toggleClass('is-lock');
   });
-  $('.js-acc__trigger').on('click', function () {
-    $('.js-acc__trigger').not(this).removeClass('is-open');
-    $('.js-acc__trigger').not(this).next().stop().slideUp(300);
-    $(this).toggleClass('is-open');
-    $(this).toggleClass('is-open');
-    $(this).next().stop().slideToggle(300);
-  });
-  $(function () {
-    $('.js-modal-open').each(function () {
-      $(this).on('click', function () {
-        $('.l-modal').fadeIn();
-        var target = $(this).data('target');
-        var modal = document.getElementById(target);
-        $(modal).fadeIn();
-        $('body').addClass('is-lock');
-      });
-    });
-    $('.js-modal-close').on('click', function () {
-      $('.l-modal').fadeOut();
-      $('.js-modal').fadeOut();
-      $('body').removeClass('is-lock');
+  $('.js-modal-open').each(function () {
+    $(this).on('click', function () {
+      $('.l-modal').fadeIn();
+      var target = $(this).data('target');
+      var modal = document.getElementById(target);
+      $(modal).fadeIn();
+      $('body').addClass('is-lock');
     });
   });
-  $(function () {
-    var e = document.querySelectorAll(".js-rellax");
-    Array.prototype.slice.call(e).forEach(function (e) {
-      var r = new Rellax(e, {
-        relativeToWrapper: !0,
-        wrapper: e.parentElement
-      });
-      window.addEventListener("scroll", function () {
-        r.refresh();
-      });
+  $('.js-modal-close').on('click', function () {
+    $('.l-modal').fadeOut();
+    $('.js-modal').fadeOut();
+    $('body').removeClass('is-lock');
+  });
+  var e = document.querySelectorAll(".js-rellax");
+  Array.prototype.slice.call(e).forEach(function (e) {
+    var r = new Rellax(e, {
+      relativeToWrapper: !0,
+      wrapper: e.parentElement
+    });
+    window.addEventListener("scroll", function () {
+      r.refresh();
     });
   }); // matchHeight
 
-  $(function () {
-    $('.p-course__list .p-course__item .p-course__list--detail').matchHeight();
-    $('.p-plan__list--table table thead tr th dl dt').matchHeight();
-  });
+  $('.p-course__list .p-course__item .p-course__list--detail').matchHeight();
+  $('.p-plan__list--table table thead tr th dl dt').matchHeight();
 });
 document.addEventListener('DOMContentLoaded', function () {
   {

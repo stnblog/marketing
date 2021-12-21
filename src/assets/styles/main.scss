@@ -34,15 +34,15 @@
 //  --------------------
 //  layout
 //  --------------------
-@import "./scss/layout/l-header";
-@import "./scss/layout/l-main";
-@import "./scss/layout/l-content";
-@import "./scss/layout/l-drawer";
-@import "./scss/layout/l-sidebar";
-@import "./scss/layout/l-section";
-@import "./scss/layout/l-dropdown";
-@import "./scss/layout/l-modal";
-@import "./scss/layout/l-footer";
+@import "./scss/layout/loader";
+@import "./scss/layout/main";
+@import "./scss/layout/header";
+@import "./scss/layout/hero";
+@import "./scss/layout/drawer";
+@import "./scss/layout/section";
+@import "./scss/layout/dropdown";
+@import "./scss/layout/modal";
+@import "./scss/layout/footer";
 
 //  --------------------
 //  js
@@ -59,7 +59,6 @@
 //  --------------------
 //  project
 //  --------------------
-@import "./scss/project/hero";
 @import "./scss/project/concept";
 @import "./scss/project/feature";
 @import "./scss/project/plan";
